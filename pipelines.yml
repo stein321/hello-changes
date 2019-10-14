@@ -33,7 +33,9 @@ pipelines:
             - name: hello_changes_a_git_repo
         execution:
           onStart:
+            - pushd a
             - cat boom.sh
+            - pop
       # - name: runB
       #   type: Bash
       #   configuration:
