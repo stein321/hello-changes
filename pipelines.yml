@@ -7,7 +7,7 @@ resources:
       branches:
         include: master
 pipelines:
-  - name: find_changes
+  - name: pipeline-a
     configuration:
       environmentVariables:
         readOnly:
