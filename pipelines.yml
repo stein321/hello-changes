@@ -20,6 +20,6 @@ pipelines:
         configuration:
           inputResources:
             - name: hello_changes
-    execution:
-      onStart:
-        - env
+        execution:
+          onStart:
+            - env
