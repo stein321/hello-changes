@@ -7,7 +7,7 @@ resources:
       branches:
         include: master
 pipelines:
-  - name: build_images_temp
+  - name: find_changes
     configuration:
       environmentVariables:
         readOnly:
@@ -21,4 +21,5 @@ pipelines:
           inputResources:
             - name: hello_changes
     execution:
-      onStart: "env"
+      onStart:
+        - env
