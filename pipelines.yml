@@ -1,11 +1,22 @@
 resources:
-  - name: hello_changes_git_repo
+  - name: hello_changes_a_git_repo
     type: GitRepo
     configuration:
       path: ~bens/hello-changes
       gitProvider: bsBitbucket
       branches:
         include: master
+      files:
+        include: \ba[A-Za-z]+\b
+  - name: hello_changes_b_git_repo
+    type: GitRepo
+    configuration:
+      path: ~bens/hello-changes
+      gitProvider: bsBitbucket
+      branches:
+        include: master
+      files:
+        include: \ba[A-Za-z]+\b
 pipelines:
   - name: pipeline-a
     configuration:
@@ -15,20 +26,19 @@ pipelines:
           versionTag: "master"
           dockerRepo: "pipelines-docker.jfrog.io/jfrog"
     steps:
-      - name: debug
-        type: Bash
-        configuration:
-          inputResources:
-            - name: hello_changes_git_repo
-        execution:
-          onStart:
-            - env
       - name: runA
         type: Bash
         configuration:
           inputResources:
-            - name: hello_changes_git_repo
-              trigger: false
+            - name: hello_changes_a_git_repo
+        execution:
+          onStart:
+            - cat boom.sh
+      - name: runB
+        type: Bash
+        configuration:
+          inputResources:
+            - name: hello_changes_b_git_repo
         execution:
           onStart:
             - cat boom.sh
