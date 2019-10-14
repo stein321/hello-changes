@@ -33,6 +33,7 @@ pipelines:
             - name: hello_changes_a_git_repo
         execution:
           onStart:
+            - cd $res_hello_changes_a_git_repo_resourcePath
             - ls
       - name: runB
         type: Bash
