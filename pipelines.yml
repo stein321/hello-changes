@@ -7,7 +7,7 @@ resources:
       branches:
         include: master
       files:
-        include: \ba[A-Za-z]+\b
+        include: \ba[A-Za-z/\.]+\b
   - name: hello_changes_b_git_repo
     type: GitRepo
     configuration:
