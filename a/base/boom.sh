@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-echo "base image build"
+echo "I'm the base build"
