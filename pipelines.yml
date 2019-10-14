@@ -44,6 +44,6 @@ pipelines:
             - name: runA
         execution:
           onStart:
-            - pushd version
+            - pushd $res_hello_changes_version_git_repo_resourcePath
             - cat boom.sh
             - popd
