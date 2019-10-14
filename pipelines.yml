@@ -1,0 +1,24 @@
+resources:
+  - name: hello_changes
+    type: GitRepo
+    configuration:
+      path: ~bens/hello-changes
+      gitProvider: bsBitbucket
+      branches:
+        include: master
+pipelines:
+  - name: build_images_temp
+    configuration:
+      environmentVariables:
+        readOnly:
+          rtRegistry: "pipelines-docker"
+          versionTag: "master"
+          dockerRepo: "pipelines-docker.jfrog.io/jfrog"
+    steps:
+      - name: debug
+        type: Bash
+        configuration:
+          inputResources:
+            - name: hello_changes
+    execution:
+      onStart: "env"
