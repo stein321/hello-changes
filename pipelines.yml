@@ -36,15 +36,15 @@ pipelines:
             - pushd a
             - cat boom.sh
             - pop
-       - name: runB
-         type: Bash
-         configuration:
-           inputResources:
-             - name: hello_changes_version_git_repo
-           inputSteps:
-             - name: pipeline_a
-         execution:
-           onStart:
-             - pushd version
-             - cat boom.sh
-             - popd
+      - name: runB
+        type: Bash
+        configuration:
+          inputResources:
+            - name: hello_changes_version_git_repo
+          inputSteps:
+            - name: pipeline_a
+        execution:
+          onStart:
+            - pushd version
+            - cat boom.sh
+            - popd
