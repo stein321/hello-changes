@@ -1,5 +1,5 @@
 resources:
-  - name: hello_changes
+  - name: hello_changes_git_repo
     type: GitRepo
     configuration:
       path: ~bens/hello-changes
@@ -19,7 +19,16 @@ pipelines:
         type: Bash
         configuration:
           inputResources:
-            - name: hello_changes
+            - name: hello_changes_git_repo
         execution:
           onStart:
             - env
+      - name: runA
+        type: Bash
+        configuration:
+          inputResources:
+            - name: hello_changes_git_repo
+              trigger: false
+        execution:
+          onStart:
+            - cat boom.sh
