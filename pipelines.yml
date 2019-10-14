@@ -7,8 +7,8 @@ resources:
       branches:
         include: master
       files:
-        include: \ba[A-Za-z/\.]+\b
-  - name: hello_changes_b_git_repo
+        include: \ba\/base\/[A-Za-z/\.]+\b
+  - name: hello_changes_version_git_repo
     type: GitRepo
     configuration:
       path: ~bens/hello-changes
@@ -16,7 +16,7 @@ resources:
       branches:
         include: master
       files:
-        include: \ba[A-Za-z]+\b
+        include: \ba\/version\/[A-Za-z/\.]+\b
 pipelines:
   - name: pipeline_a
     configuration:
@@ -36,11 +36,15 @@ pipelines:
             - pushd a
             - cat boom.sh
             - pop
-      # - name: runB
-      #   type: Bash
-      #   configuration:
-      #     inputResources:
-      #       - name: hello_changes_b_git_repo
-      #   execution:
-      #     onStart:
-      #       - cat boom.sh
+       - name: runB
+         type: Bash
+         configuration:
+           inputResources:
+             - name: hello_changes_version_git_repo
+           inputSteps:
+             - name: pipeline_a
+         execution:
+           onStart:
+             - pushd version
+             - cat boom.sh
+             - popd
