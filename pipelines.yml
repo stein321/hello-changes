@@ -17,6 +17,16 @@ resources:
         include: master
       files:
         include: \ba\/version\/[A-Za-z/\.]+\b
+  - name: hello_changes_b_git_repo
+    type: GitRepo
+    configuration:
+      path: ~bens/hello-changes
+      gitProvider: bsBitbucket
+      branches:
+        include: master
+      files:
+        include: \bb\/version\/[A-Za-z/\.]+\b
+
 pipelines:
   - name: pipeline_a
     configuration:
