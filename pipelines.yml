@@ -18,7 +18,7 @@ resources:
       files:
         include: \ba[A-Za-z]+\b
 pipelines:
-  - name: pipeline-a
+  - name: pipeline_a
     configuration:
       environmentVariables:
         readOnly:
