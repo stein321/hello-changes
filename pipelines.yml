@@ -45,5 +45,5 @@ pipelines:
         execution:
           onStart:
             - pushd $res_hello_changes_version_git_repo_resourcePath
-            - cat boom.sh
+            - cat bam.sh
             - popd
