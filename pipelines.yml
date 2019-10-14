@@ -42,7 +42,7 @@ pipelines:
           inputResources:
             - name: hello_changes_version_git_repo
           inputSteps:
-            - name: pipeline_a
+            - name: runA
         execution:
           onStart:
             - pushd version
