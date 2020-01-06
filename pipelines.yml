@@ -35,6 +35,7 @@ pipelines:
           rtRegistry: "pipelines-docker"
           versionTag: "master"
           dockerRepo: "pipelines-docker.jfrog.io/jfrog"
+          jfrogBuildNumber: "$run_id"
     steps:
       - name: runA
         type: Bash
@@ -45,6 +46,7 @@ pipelines:
           onStart:
             - cd $res_hello_changes_a_git_repo_resourcePath
             - ls
+            - echo $jfrogBuildNumber
       - name: runB
         type: Bash
         configuration:
