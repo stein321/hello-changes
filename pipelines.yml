@@ -2,7 +2,7 @@ resources:
   - name: hello_changes_a_git_repo
     type: GitRepo
     configuration:
-      path: ~bens/hello-changes
+      path: stein321/hello-changes
       gitProvider: bsBitbucket
       branches:
         include: master
@@ -11,7 +11,7 @@ resources:
   - name: hello_changes_version_git_repo
     type: GitRepo
     configuration:
-      path: ~bens/hello-changes
+      path: stein321/hello-changes
       gitProvider: bsBitbucket
       branches:
         include: master
@@ -20,7 +20,7 @@ resources:
   - name: hello_changes_b_git_repo
     type: GitRepo
     configuration:
-      path: ~bens/hello-changes
+      path: stein321/hello-changes
       gitProvider: bsBitbucket
       branches:
         include: master
