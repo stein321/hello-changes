@@ -3,7 +3,7 @@ resources:
     type: GitRepo
     configuration:
       path: stein321/hello-changes
-      gitProvider: bsBitbucket
+      gitProvider: stein321Github
       branches:
         include: master
       files:
@@ -12,7 +12,7 @@ resources:
     type: GitRepo
     configuration:
       path: stein321/hello-changes
-      gitProvider: bsBitbucket
+      gitProvider: stein321Github
       branches:
         include: master
       files:
@@ -21,7 +21,7 @@ resources:
     type: GitRepo
     configuration:
       path: stein321/hello-changes
-      gitProvider: bsBitbucket
+      gitProvider: stein321Github
       branches:
         include: master
       files:
