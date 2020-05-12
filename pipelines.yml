@@ -40,6 +40,8 @@ pipelines:
       - name: runA
         type: Bash
         configuration:
+          integrations:
+            - name: bsArt
           inputResources:
             - name: hello_changes_a_git_repo
         execution:
