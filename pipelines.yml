@@ -1,5 +1,5 @@
 resources:
-  - name: hello_changes_a_git_repo
+  - name: a_hello_changes_base
     type: GitRepo
     configuration:
       path: benanas-donuts/hello-changes
@@ -8,7 +8,7 @@ resources:
         include: master
       files:
         include: \ba\/base\/[A-Za-z/\.]+\b
-  - name: hello_changes_version_git_repo
+  - name: a_hello_changes_version
     type: GitRepo
     configuration:
       path: benanas-donuts/hello-changes
@@ -17,7 +17,7 @@ resources:
         include: master
       files:
         include: \ba\/version\/[A-Za-z/\.]+\b
-  - name: hello_changes_b_git_repo
+  - name: b_hello_changes_version
     type: GitRepo
     configuration:
       path: benanas-donuts/hello-changes
@@ -41,7 +41,7 @@ pipelines:
         type: Bash
         configuration:
           inputResources:
-            - name: hello_changes_a_git_repo
+            - name: a_hello_changes_base
         execution:
           onStart:
             - curl ifconfig.me
@@ -54,7 +54,7 @@ pipelines:
           integrations:
             - name: bsArt
           inputResources:
-            - name: hello_changes_version_git_repo
+            - name: a_hello_changes_version
           inputSteps:
             - name: runA
         execution:
