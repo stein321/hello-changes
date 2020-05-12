@@ -2,7 +2,7 @@ resources:
   - name: hello_changes_a_git_repo
     type: GitRepo
     configuration:
-      path: stein321/hello-changes
+      path: benanas-donuts/hello-changes
       gitProvider: stein321Github
       branches:
         include: master
@@ -11,7 +11,7 @@ resources:
   - name: hello_changes_version_git_repo
     type: GitRepo
     configuration:
-      path: stein321/hello-changes
+      path: benanas-donuts/hello-changes
       gitProvider: stein321Github
       branches:
         include: master
@@ -20,7 +20,7 @@ resources:
   - name: hello_changes_b_git_repo
     type: GitRepo
     configuration:
-      path: stein321/hello-changes
+      path: benanas-donuts/hello-changes
       gitProvider: stein321Github
       branches:
         include: master
@@ -40,18 +40,19 @@ pipelines:
       - name: runA
         type: Bash
         configuration:
-          integrations:
-            - name: bsArt
           inputResources:
             - name: hello_changes_a_git_repo
         execution:
           onStart:
+            - curl ifconfig.me
             - cd $res_hello_changes_a_git_repo_resourcePath
             - ls
             - echo $jfrogBuildNumber
       - name: runB
         type: Bash
         configuration:
+          integrations:
+            - name: bsArt
           inputResources:
             - name: hello_changes_version_git_repo
           inputSteps:
