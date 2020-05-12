@@ -59,7 +59,7 @@ pipelines:
             - name: runA
         execution:
           onStart:
-            - pushd $res_hello_changes_version_git_repo_resourcePath
+            - pushd $res_a_hello_changes_version_resourcePath
             - ls
             - cat a/version/bam.sh
             - popd
