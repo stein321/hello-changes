@@ -28,7 +28,7 @@ resources:
         include: \bb\/version\/[A-Za-z/\.]+\b
 
 pipelines:
-  - name: hello-changes
+  - name: hello_changes
     configuration:
       environmentVariables:
         readOnly:
