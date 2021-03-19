@@ -6,7 +6,7 @@ pipelines:
         configuration:
           nodePool: awswin_2019
           environmentVariables:
-            CLOUDSDK_PYTHON: C:\Python38\python.exe
+            CLOUDSDK_PYTHON: C:\Python39\python.exe
         execution:
           onExecute:
             - write-output "executing step..."
