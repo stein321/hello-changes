@@ -7,8 +7,9 @@ pipelines:
           nodePool: awswin_2019
           environmentVariables:
             CLOUDSDK_PYTHON: C:\Python39\python.exe
+          integrations:
+            - name: PSSI_GoogleCloud
         execution:
           onExecute:
             - write-output "executing step..."
-            - choco install gcloudsdk -y
             - gcloud container images list
