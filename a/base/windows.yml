@@ -4,7 +4,7 @@ pipelines:
       - name: S_PS_I_Google_0001
         type: PowerShell
         configuration:
-          nodePool: win_2019
+          nodePool: awswin_2019
           integrations:
             - name: PSSI_GoogleCloud
         execution:
