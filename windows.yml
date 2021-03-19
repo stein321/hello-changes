@@ -10,5 +10,5 @@ pipelines:
         execution:
           onExecute:
             - write-output "executing step..."
-            - choco install gcloudsdk
+            - choco install gcloudsdk -y
             - gcloud container images list
