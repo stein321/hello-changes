@@ -5,9 +5,9 @@ pipelines:
         type: PowerShell
         configuration:
           nodePool: awswin_2019
-          integrations:
-            - name: PSSI_GoogleCloud
+          environmentVariables:
+            CLOUDSDK_PYTHON: C:\Python38\python.exe
         execution:
           onExecute:
             - write-output "executing step..."
-            - gcloud container images list
+            - which python
