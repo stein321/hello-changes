@@ -10,4 +10,5 @@ pipelines:
         execution:
           onExecute:
             - write-output "executing step..."
+            - ls C:\
             - gcloud container images list
