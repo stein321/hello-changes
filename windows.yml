@@ -5,6 +5,13 @@ pipelines:
         type: PowerShell
         configuration:
           nodePool: awswin_2019
+        execution:
+          onExecute:
+            - gcloud components update
+      - name: S_PS_I_Google_0001
+        type: PowerShell
+        configuration:
+          nodePool: awswin_2019
           environmentVariables:
             CLOUDSDK_PYTHON: C:\Python39\python.exe
           integrations:
